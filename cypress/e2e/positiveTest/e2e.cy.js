@@ -70,6 +70,7 @@ describe('E2E Testing', () => {
             .should('be.visible')
 
 
+
         // кнопка подать заявку
 
         // cy.get('.course-choice-page_centerButton__2YETg > .info-button_menuWrapper__z4N7n > .button-link_button__18xcn')

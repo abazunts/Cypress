@@ -1,0 +1,14 @@
+# Ignore Cypress binary files
+/cypress/videos/
+/cypress/screenshots/
+
+# Ignore generated files
+/cypress/fixtures/generated/
+/cypress/results/
+
+# Ignore local configuration files
+/cypress.env.json
+/cypress.json
+
+# Ignore Node.js modules
+/node_modules/
