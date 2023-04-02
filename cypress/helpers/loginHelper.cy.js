@@ -1,5 +1,5 @@
 module.exports = {
-    login: () => {
+    login: (name, password) => {
         cy.visit('/')
 
         cy.viewport(1920, 1080)
@@ -13,11 +13,11 @@ module.exports = {
         cy.contains("Войти через GitHub")
             .should('be.visible').click()
 
-        cy.origin('https://github.com', () => {
-            cy.get('input[name="login"]').type('nastyamyshko123@gmail.com')
+        cy.origin('https://github.com', { args: { name, password } },({ name, password }) => {
+            cy.get('input[name="login"]').type(name)
                 .should('be.visible')
 
-            cy.get('input[type="password"]').type('Passwordgit1')
+            cy.get('input[type="password"]').type(password)
                 .should('be.visible')
 
             cy.get('input[type="submit"]')

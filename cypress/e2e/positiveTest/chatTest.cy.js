@@ -1,6 +1,6 @@
 const loginHelper = require("../../helpers/loginHelper.cy");
 it('Enter "Hello, its an automated test" ', () => {
-    loginHelper.login();
+    loginHelper.login(Cypress.env('login_name'), Cypress.env('login_password'));
 
     cy.get('.Chat_iconBox__3d1NM')
         .should('be.visible').click();

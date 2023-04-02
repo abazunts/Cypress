@@ -4,7 +4,8 @@ const checkboxHelper = require('../../helpers/checkboxHelper.cy');
 describe('E2E Testing', () => {
 
     it('E2E test', () => {
-        loginHelper.login();
+        loginHelper.login(Cypress.env('login_name'), Cypress.env('login_password'));
+
         checkboxHelper.checkBox();
 
         ////////// ввода никнеймов, привязка телеги и выбор курса
