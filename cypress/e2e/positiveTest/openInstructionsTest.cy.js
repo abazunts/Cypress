@@ -26,7 +26,7 @@ describe('Open and close the instructions', () => {
                 .should('be.visible').click()
             // cy.contains("Authorize it-incubator").click({multiple: true})
         })
-        cy.get('.page_instructions__21neD')
+        cy.contains('Инструкция по заполнению социальных сетей')
             .should('be.visible').click()
 
         cy.get('.global-page_arrowContainer__sQICY > span')
