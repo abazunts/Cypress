@@ -1,4 +1,4 @@
-const loginHelper = require("../../helpers/loginHelper.cy");
+const loginHelper = require("../../../helpers/posochnica/loginHelper.cy");
 describe('Change of course on the course registration page', () => {
     it('Sign in', () => {
 
@@ -10,9 +10,7 @@ describe('Change of course on the course registration page', () => {
         cy.contains('button', "Выбрать")
             .should('be.visible').click({multiple: true})
 
-
         cy.get('.course-choice-page_buttons__2DLqJ > .button-link_red__3CQND')
             .should('be.visible').click({multiple: true})
-
     })
 })

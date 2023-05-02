@@ -1,5 +1,5 @@
-const loginHelper = require('../../helpers/loginHelper.cy');
-const checkboxHelper = require('../../helpers/checkboxHelper.cy');
+const loginHelper = require('../../../helpers/posochnica/loginHelper.cy');
+const checkboxHelper = require('../../../helpers/posochnica/checkboxHelper.cy');
 
 describe('E2E Testing', () => {
 

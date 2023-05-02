@@ -1,4 +1,4 @@
-const loginHelper = require("../../helpers/loginHelper.cy");
+const loginHelper = require("../../../helpers/posochnica/loginHelper.cy");
 it('Enter "Hello, its an automated test" ', () => {
     loginHelper.login(Cypress.env('login_name'), Cypress.env('login_password'));
 

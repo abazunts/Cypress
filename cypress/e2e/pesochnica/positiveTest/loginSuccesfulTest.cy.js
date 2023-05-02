@@ -1,4 +1,4 @@
-const loginHelper = require('../../helpers/loginHelper.cy');
+const loginHelper = require('../../../helpers/posochnica/loginHelper.cy');
 describe('Login test', () => {
 
     it('Enter login and password', () => {
