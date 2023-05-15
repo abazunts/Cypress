@@ -1,20 +1,24 @@
-const loginHelperOfferHeap = require('../../helpers/offerHeap/loginHelperOfferHeap.cy')
+const loginHelperOfferHeap = require('../../../helpers/offerHeap/loginHelperOfferHeap.cy')
 describe('log in, add new vacancy, general info, geo tag, additionla info, work tag', () => {
 
     it('Add new vacancy', () => {
         loginHelperOfferHeap.login(Cypress.env('loginName'), Cypress.env('loginPassword'));
 
+        /// click add vacancy button
         cy.get('.sc-dIfARi')
-            .should('be.visible')
-            .click();
+            .should('be.visible').click();
 
         cy.contains("General Info")
             .should('be.visible');
 
+        ///input vacancy name
+        cy.contains("Vacancy name*").should('be.visible');
+
+        cy.get(':nth-child(3) > .sc-lknQiW > .sc-jmpzUR').type('Developer')
+
         /// select status
         cy.get(':nth-child(5) > .sc-jTjUTQ > .css-b62m3t-container > .css-d04b62-control > .css-1d8n9bt > .css-ackcql')
             .should('be.visible').click();
-
 
         cy.contains("Draft").as('Selected Status')
             .click();
@@ -48,7 +52,6 @@ describe('log in, add new vacancy, general info, geo tag, additionla info, work 
 
 
         /// checkbox team lead
-
         cy.contains("Teamlead").should('be.visible');
 
         cy.get('.sc-hAQmFe').as('Checkbox')
@@ -87,19 +90,21 @@ describe('log in, add new vacancy, general info, geo tag, additionla info, work 
 
         cy.get('@Yes').click();
 
-        // cy.get('@Yes').should('have.css', 'background-color', 'rgb(255, 0, 0)');
-
         /// choose office
-
-        cy.get('[data-type="Yes"] > .sc-gzrROc')
-            .should('be.visible')
+        cy.get(':nth-child(20) > .sc-jTjUTQ > .css-b62m3t-container > .css-d04b62-control > .css-1d8n9bt > .css-ackcql')
             .click();
+
+        cy.contains("Bla").as('Selected office').then(($option) => {
+            cy.wrap($option).invoke('click');
+        });
+
+        cy.get('@Selected office').invoke('click');
+
 
         /// select certificates list (multiple values)
 
         /// select technical certificates (multiple values)
         cy.get(':nth-child(26) > .css-b62m3t-container > .css-d04b62-control > .css-1d8n9bt').as('select technical certificate')
-
             .should('be.visible').click();
 
         cy.contains("techical cert").as('Selected certificate')
@@ -176,6 +181,12 @@ describe('log in, add new vacancy, general info, geo tag, additionla info, work 
 
         cy.get('@Add button').click();
 
+        ///save as draft
+        cy.contains("Save as draft").should('be.visible');
+
+        // cy.get('.kddxtZ').click();
+        //
+        // cy.contains("Vacancies").should('be.visible');
 
     })
 });

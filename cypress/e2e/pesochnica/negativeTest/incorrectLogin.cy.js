@@ -16,6 +16,7 @@ describe('Negative Tests', () => {
 
 
         cy.origin('https://github.com', () => {
+
             cy.get('input[name="login"]').type('nastyamyshko123@gmail.co')
                 .should('be.visible')
 

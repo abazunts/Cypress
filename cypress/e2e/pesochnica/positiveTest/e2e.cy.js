@@ -8,7 +8,7 @@ describe('E2E Testing', () => {
 
         checkboxHelper.checkBox();
 
-        ////////// ввода никнеймов, привязка телеги и выбор курса
+        // ввода никнеймов, привязка телеги и выбор курса
         cy.contains("Обучение в It-Incubator").should('be.visible');
 
         cy.get(':nth-child(2) > .social-networks-form-page_inputBlockDesktop__A2Gmi > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input')
@@ -19,26 +19,25 @@ describe('E2E Testing', () => {
             .type('qavaltest4')
             .should('be.visible');
 
-        /// кнопка проверить
+        // кнопка проверить
         cy.get('button[type="submit"]')
             .should('be.visible').click();
 
         // cy.contains("Привязать")
         //     .should('be.visible').click()
 
-
-        /// кнопка выбрать курс
+        // кнопка выбрать курс
         cy.get('.info-button_menuWrapper__z4N7n > .button-link_button__18xcn')
             .should('be.visible').click();
 
         cy.get(':nth-child(1) > .course-choice-page_third__3P6yZ > .button-link_button__18xcn')
             .should('be.visible').click();
 
-        /// кнопка продолжить
+        // кнопка продолжить
         cy.get('.course-choice-page_buttons__2DLqJ > .button-link_red__3CQND')
             .should('be.visible').click({force: true});
 
-        ///проверка перехода на следующую страницу
+        //проверка перехода на следующую страницу
 
         cy.get('.applicant_mainTextDesktop__3Jx-8')
             .should('be.visible');
@@ -46,8 +45,8 @@ describe('E2E Testing', () => {
 
         // кнопка подать заявку
 
-        // cy.get('.course-choice-page_centerButton__2YETg > .info-button_menuWrapper__z4N7n > .button-link_button__18xcn')
-        //     .should('be.visible').click();
+        cy.get('.course-choice-page_centerButton__2YETg > .info-button_menuWrapper__z4N7n > .button-link_button__18xcn')
+            .should('be.visible').click();
         //
         // //// кнопка отказаться
         // cy.get('.competition-page_button__1vNbN > .button-link_button__18xcn')
