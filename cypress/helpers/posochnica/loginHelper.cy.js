@@ -13,11 +13,11 @@ module.exports = {
         cy.contains("Войти через GitHub")
             .should('be.visible').click()
 
-        cy.origin('https://github.com', { args: { name, password } },({ name, password }) => {
-            cy.get('input[name="login"]').type(name)
+        cy.origin('https://github.com', {args: {name, password}}, ({name, password}) => {
+            cy.get('#login_field').type(name)
                 .should('be.visible')
 
-            cy.get('input[type="password"]').type(password)
+            cy.get('#password').type(password)
                 .should('be.visible')
 
             cy.get('input[type="submit"]')

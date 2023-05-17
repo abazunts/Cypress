@@ -14,7 +14,7 @@ module.exports = defineConfig({
         login_password: 'Passwordgit1',
     },
     env: {
-        loginName: 'nastyamysh@bk.ru',
+        loginName: 'nmyshko1@gmail.com',
         loginPassword: 'Passwordoffer1',
     },
 })
