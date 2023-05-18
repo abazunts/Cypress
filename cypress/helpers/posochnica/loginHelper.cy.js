@@ -1,5 +1,6 @@
 module.exports = {
     login: (name, password) => {
+
         cy.visit('/')
 
         cy.viewport(1920, 1080)
@@ -22,7 +23,8 @@ module.exports = {
 
             cy.get('input[type="submit"]')
                 .should('be.visible').click()
-            // cy.contains("Authorize it-incubator").click({multiple: true})
+
+            cy.contains("Authorize it-incubator").click({multiple: true})
         })
         cy.contains("Ознакомься с инструкцией и продолжай регистрацию")
             .should('be.visible')

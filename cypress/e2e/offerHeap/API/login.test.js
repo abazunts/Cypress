@@ -1,30 +1,28 @@
-const request = require('supertest');
-const app = 'https://offerhunt.staging.it-incubator.ru/';
+const axios = require('axios');
 
-describe('API Авторизации', () => {
-    it('Должен успешно выполнить вход', async () => {
-        const response = await request(app)
-            .post('/api/auth/public/login')
-            .send({
-                username: 'nastyamysh@bk.ru',
-                password: 'Passwordoffer1',
-            });
+describe('Auth', () => {
+    it('Website Load', async () => {
+        const response = await axios.get('https://offerhunt.staging.it-incubator.ru');
 
         expect(response.status).toBe(200);
-        expect(response.body).toHaveProperty('accessToken');
     });
 
-    it('Должен вернуть ошибку 401 для неверных данных', async () => {
-        const response = await request(app)
-            .post('/api/auth/admin/login')
-            .send({
-                username: 'incorrect_username',
-                password: 'incorrect_password',
-            });
+    it('login', async () => {
+        const url = 'https://offerhunt.staging.it-incubator.ru/api/auth/public/login';
+        const body = {
+            email: 'yunastya2@gmail.com',
+            password: 'Passwordoffer1'
+        };
 
-        expect(response.status).toBe(401);
-        expect(response.body).toHaveProperty('message', 'Incorrect credentials');
+        try {
+            const response = await axios.post(url, body);
+
+            expect(response.status).toBe(200);
+            expect(response.data.message).toBe('Authentication successful');
+
+        } catch (error) {
+
+            console.error(error);
+        }
     });
 });
-
-

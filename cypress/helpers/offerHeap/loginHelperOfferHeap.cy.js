@@ -1,5 +1,6 @@
 module.exports = {
     login: (name, password) => {
+
         cy.visit('https://offerhunt.staging.it-incubator.ru/');
 
         cy.viewport(1920, 1080);

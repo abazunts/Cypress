@@ -19,6 +19,8 @@ describe('E2E Testing', () => {
             .type('qavaltest4')
             .should('be.visible');
 
+        // проверка дизаблед кнопки "проверить"
+
         // кнопка проверить
         cy.get('button[type="submit"]')
             .should('be.visible').click();
@@ -27,6 +29,8 @@ describe('E2E Testing', () => {
         //     .should('be.visible').click()
 
         // кнопка выбрать курс
+
+        // проверка дизаблед кнопки "выбрать курс"
         cy.get('.info-button_menuWrapper__z4N7n > .button-link_button__18xcn')
             .should('be.visible').click();
 
