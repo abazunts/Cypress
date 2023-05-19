@@ -9,14 +9,10 @@ module.exports = defineConfig({
             // implement node event listeners here
         }
     },
-    //TODO: fix a problem with 2 env
     env: {
-        login_name: 'nastyamyshko123@gmail.com',
-        login_password: 'Passwordgit1',
+        login_name: 'valeratest106@bk.ru',
+        login_password: 'Valera1!1',
     },
-    // env: {
-    //     loginName: 'yunastya2@gmail.com',
-    //     loginPassword: 'Passwordoffer1',
-    // },
+
 })
 
